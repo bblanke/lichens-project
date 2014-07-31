@@ -1,0 +1,37 @@
+<h2>Submitted Data</h2>
+
+<table class='data'>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Species</th>
+      <th>Circumference</th>
+      <th>Light Level</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Distance to Road</th>
+      <th>Distance to Water</th>
+      <th>Direction</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trees.each do |tree| %>
+      <tr>
+        <td><%= tree.date %></td>
+        <td><%= tree.species %></td>
+        <td><%= tree.circum %></td>
+        <td><%= tree.light %></td>
+        <td><%= tree.lat %></td>
+        <td><%= tree.long %></td>
+        <td><%= tree.droad %></td>
+        <td><%= tree.dwater %></td>
+        <td><%= tree.direction %></td>
+        <td><%= link_to 'Show', tree %> <%= link_to 'Destroy', tree, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

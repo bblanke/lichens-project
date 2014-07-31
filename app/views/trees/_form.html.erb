@@ -1,0 +1,82 @@
+<%= form_for(@tree) do |f| %>
+  <% if @tree.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tree.errors.count, "error") %> prohibited this tree from being saved:</h2>
+
+      <ul>
+      <% @tree.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div class="formWrap">
+    <div class='formgrid' id='date'>
+        <%= f.label :date, "Date"%>
+            <%= f.date_select :date, :class => "dateselect" %>
+    </div>
+    <div class='formgrid'>
+        <%= f.label :date, "Tree Species"%>
+            <%= f.text_field :species %>
+    </div>            
+    <div class='formgrid'>
+        <%= f.label :date, "Direction (degrees)"%>
+            <%= f.number_field :direction %>
+    </div>
+    <div class='formgrid'>
+        <%= f.label :date, "Circumference (cm)"%>
+            <%= f.number_field :circum %>
+    </div>
+    <div class='formgrid'>
+        <%= f.label :date, "Latitude"%>
+            <%= f.text_field :lat %>
+    </div>
+    <div class='formgrid'>
+        <%= f.label :date, "Longitude"%>
+            <%= f.text_field :long %>
+    </div>
+    <div class='formgrid'>
+        <%= f.label :date, "Distance to water (m)"%>
+            <%= f.number_field :dwater %>
+    </div>
+    <div class='formgrid'>
+        <%= f.label :date, "Distance to road (m)"%>
+            <%= f.number_field :droad %>
+    </div>
+    <div class='formgrid'>
+        <%= f.label :date, "Light Level"%>
+            <%= f.select(:light, [['--', ''], ['Low', 'low'], ['Medium', 'medium'], ['High', 'high']]) %>
+    </div>
+    <div class='formgrid'>
+        <%= f.label :date, "Notes"%>
+            <%= f.text_area :notes %>
+    </div>
+    <div class='formgrid'>
+        <%= f.label :date, "Surroundings Image"%>
+            <%= f.file_field :parea %>
+    </div>
+    <div class='formgrid'>
+        <%= f.label :date, "Tree Image"%>
+            <%= f.file_field :ptree %>
+    </div>
+    <div class='formgrid'>
+        <%= f.label :date, "Leaf Image"%>
+            <%= f.file_field :pleaf %>
+    </div>
+	<% count = 0 %>
+	<%= f.fields_for :quadrants do |builder| %>
+		<div class="sectionwrap">
+			<% count += 1%>
+	    	<%= render "quadrant_fields", :f => builder, :count => count %>
+		</div> 
+	  <% end %>
+    <div style='clear:both;'></div> 
+</div>
+  <div class="actions" id='datasubmit'>
+    <%= f.submit "Submit Data &#59238;".html_safe, :class => "button right", :id => "treesubmit"%>
+  </div>
+  </div>
+            
+	<%end%>
+ 
+           

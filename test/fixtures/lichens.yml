@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  species: MyString
+  ascomata: false
+  soredia: false
+  isida: false
+  cyano: false
+
+two:
+  species: MyString
+  ascomata: false
+  soredia: false
+  isida: false
+  cyano: false

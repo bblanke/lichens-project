@@ -1,0 +1,31 @@
+<h2>Users</h2>
+
+<table class='data'>
+  <thead>
+    <tr>
+      <th>ID</th>
+	  <th>Name</th>
+      <th>Email</th>
+      <th>Last Login At</th>
+      <th>Last Login IP</th>
+	  <th>Is Admin?</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+		<td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.last_sign_in_at %></td>
+        <td><%= user.last_sign_in_ip %></td>
+		<td><%= user.admin%></td>
+		<td><%= link_to "Toggle Admin", active_user_path(user)%></td>
+		<td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

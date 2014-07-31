@@ -1,0 +1,113 @@
+<% content_for :head do %>
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtGe96x1u09-H2eOXg4hfOvvEh4DVe8vs&sensor=false">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(35.5, -80),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.TERRAIN,
+          scrollwheel: false,
+          navigationControl: false,
+          mapTypeControl: false
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+		
+		<% count = 0 %>
+		<% @trees.each do |t| %>
+		var marker<%=count%> = new google.maps.Marker({
+		    position: new google.maps.LatLng(<%= t.lat%>, <%= t.long%>),
+		    map: map,
+		    title:"Record #<%= t.id%>"
+		});
+		<% count += 1 %>
+		<%end%>
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+	
+
+<%end%>
+        <section class="page p1" id="p1Cont" data-type="background" data-speed="4">
+            <p class="right top fixed menu light" data-page="1">&#9776;</p>
+            <article class="center" id="bigTitle">
+                <h1><span class="little">The</span>Lichens<br>Project</h1>
+                <h2><span class="highlight" id="bottomLeft">Crowd-sourced</span><span class="highlight" id="bottomRight">Lichen research</span></h2>
+            </article>
+            <div class="vignette overlay"></div>
+            <a class="dArrow smoothScroll" href="#page2"><span class="glyphicon glyphicon-chevron-down"></span></a>
+        </section>
+        <a id="page2"></a>
+        <section class="page p2" id="p2Cont">
+            <p class="right top fixed menu dark" data-page="2">&#9776;</p>
+            <br><br><br>
+            <h1>Researching with Crowd Sourced Data</h1>
+            <p class="p2Text">
+                How can we use the general population to contribute accurate, useful, and plentiful research data that can then be used to infer reliable conclusions? <br><br>
+				Implications<br>
+				The Lichens Project focuses on lichens, but we intend for it to form something bigger. This website means to provide massive amounts of <b>reliable<b> data in short periods of time, which allows researchers to form conclusions quickly and accurately. Technology used to create our project can easily be transferred to any discipline which could allow our method to revolutionize the way data, especially environmental data, is colected. We hope to soon create an online platform for researchers to quickly and easily set up a crowd sourced data collection system.<br><br>
+				Methods<br>
+				We developed a simple user interface by creating many iterations of the project and having users test each one for ease of use. Data display was tested with several different map libraries/APIs. We ultimately went with Google Maps with some custom JavaScript.
+            </p><br>
+            <h1>Credits</h1>
+            <p class="p2Text">
+                <b>Developers</b><br>
+                Website Design &amp; Backend by <a href="http://www.baileyblankenship.com">Bailey Blankenship</a><br>
+                iPhone/Android Application by Allan Jiang
+                <br><br>
+                <b>Faculty Supervisors</b><br>
+                Dr. Myra Halpin<br>
+                Dr. Linda Schmalbeck
+            </p>
+            <a href="mailto:blankenship15b@ncssm.edu" class="middle bottom button blue">Send Feedback</a>
+        </section>
+        <a id="page3"></a>
+        <section class="page p3" id="p3Cont">
+            <p class="right top fixed menu dark" data-page="3">&#9776;</p>
+            <div id="map-canvas"/>
+        </section>
+        <a id="page4"></a>
+        <section class="pageOverflow p4" id="p4Cont">
+            <p class="right top fixed menu" style="color:#41a2bd;" data-page="4">&#9776;</p>
+			
+            <table>
+				<thead>
+					
+                <tr>
+					<th>#</th>
+                    <th>Date</th>
+                    <th>Species</th>
+                    <th>Light Level</th>
+                    <th>Circumference (cm)</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>Distance to Road (m)</th>
+                    <th>Distance to Water (m)</th>
+                    <th>Direction</th>
+                    <th class="wideCell"></th>
+                </tr>
+				</thead>
+				<tbody>
+				<% @trees.each do |t| %>
+                <tr>
+					<td><%=t.id%></td>
+                    <td><%= t.date %></td>
+                    <td><%= t.species %></td>
+                    <td><%= t.light %></td>
+                    <td><%= t.circum%></td>
+                    <td><%= t.lat %></td>
+                    <td><%= t.long%></td>
+                    <td><%= t.droad %></td>
+                    <td><%= t.dwater %></td>
+                    <td><%= t.direction%></td>
+                    <td class="arrowBox"><%= link_to "<span class='glyphicon glyphicon-chevron-right'></span>".html_safe, t %></td>
+                </tr>
+				<%end%>
+				</tbody>
+
+            </table>
+            <!-- USE GOOGLE MAPS DRAWING FOR THE DOTS-->
+			
+        </section>
+

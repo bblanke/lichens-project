@@ -1,0 +1,124 @@
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "lichens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "quadrant_id" integer, "species" varchar(255), "pcover" varchar(255), "growth" varchar(255), "ascomata" varchar(255), "issored" varchar(255), "cyano" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "lichens_quadrants" ("lichen_id" integer NOT NULL, "quadrant_id" integer NOT NULL) 
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "quadrants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tree_id" integer, "qnum" integer, "notes" text, "created_at" datetime, "updated_at" datetime, "image_file_name" varchar(255), "image_content_type" varchar(255), "image_file_size" integer, "image_updated_at" datetime) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "trees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "date" date, "species" varchar(255), "circum" integer, "light" varchar(255), "lat" decimal NOT NULL, "long" decimal NOT NULL, "droad" integer, "dwater" integer, "direction" integer, "notes" text, "created_at" datetime, "updated_at" datetime, "pleaf_file_name" varchar(255), "pleaf_content_type" varchar(255), "pleaf_file_size" integer, "pleaf_updated_at" datetime, "parea_file_name" varchar(255), "parea_content_type" varchar(255), "parea_file_size" integer, "parea_updated_at" datetime, "ptree_file_name" varchar(255), "ptree_content_type" varchar(255), "ptree_file_size" integer, "ptree_updated_at" datetime) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "quiz" boolean DEFAULT 'f', "admin" boolean DEFAULT 'f', "name" varchar(255), "authentication_token" varchar(255), "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255)) [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131116062627')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131111142834')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131111142909')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131112003803')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131113193516')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131113225811')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131113225903')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131115210107')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131116062551')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131116062601')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "lichens"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-16 05:04:38', '2014-03-16 05:04:38', 980190962)[0m
+SQLite3::SQLException: table lichens has no column named soredia: INSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-16 05:04:38', '2014-03-16 05:04:38', 980190962)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "lichens"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-16 05:04:38', '2014-03-16 05:04:38', 980190962)[0m
+SQLite3::SQLException: table lichens has no column named soredia: INSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-16 05:04:38', '2014-03-16 05:04:38', 980190962)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "lichens"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-16 05:04:38', '2014-03-16 05:04:38', 980190962)[0m
+SQLite3::SQLException: table lichens has no column named soredia: INSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-16 05:04:38', '2014-03-16 05:04:38', 980190962)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "lichens"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-16 05:04:38', '2014-03-16 05:04:38', 980190962)[0m
+SQLite3::SQLException: table lichens has no column named soredia: INSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-16 05:04:38', '2014-03-16 05:04:38', 980190962)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "lichens"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-16 05:04:38', '2014-03-16 05:04:38', 980190962)[0m
+SQLite3::SQLException: table lichens has no column named soredia: INSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-16 05:04:38', '2014-03-16 05:04:38', 980190962)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "lichens"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-16 05:04:38', '2014-03-16 05:04:38', 980190962)[0m
+SQLite3::SQLException: table lichens has no column named soredia: INSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-16 05:04:38', '2014-03-16 05:04:38', 980190962)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "lichens"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-16 05:04:38', '2014-03-16 05:04:38', 980190962)[0m
+SQLite3::SQLException: table lichens has no column named soredia: INSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-16 05:04:38', '2014-03-16 05:04:38', 980190962)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "lichens"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-16 05:04:38', '2014-03-16 05:04:38', 980190962)[0m
+SQLite3::SQLException: table lichens has no column named soredia: INSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-16 05:04:38', '2014-03-16 05:04:38', 980190962)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "lichens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "quadrant_id" integer, "species" varchar(255), "pcover" varchar(255), "growth" varchar(255), "ascomata" varchar(255), "issored" varchar(255), "cyano" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "lichens_quadrants" ("lichen_id" integer NOT NULL, "quadrant_id" integer NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "quadrants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tree_id" integer, "qnum" integer, "notes" text, "created_at" datetime, "updated_at" datetime, "image_file_name" varchar(255), "image_content_type" varchar(255), "image_file_size" integer, "image_updated_at" datetime) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "trees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "date" date, "species" varchar(255), "circum" integer, "light" varchar(255), "lat" decimal NOT NULL, "long" decimal NOT NULL, "droad" integer, "dwater" integer, "direction" integer, "notes" text, "created_at" datetime, "updated_at" datetime, "pleaf_file_name" varchar(255), "pleaf_content_type" varchar(255), "pleaf_file_size" integer, "pleaf_updated_at" datetime, "parea_file_name" varchar(255), "parea_content_type" varchar(255), "parea_file_size" integer, "parea_updated_at" datetime, "ptree_file_name" varchar(255), "ptree_content_type" varchar(255), "ptree_file_size" integer, "ptree_updated_at" datetime) 
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "quiz" boolean DEFAULT 'f', "admin" boolean DEFAULT 'f', "name" varchar(255), "authentication_token" varchar(255), "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255)) [0m
+  [1m[35m (0.7ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131116062627')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131111142834')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131111142909')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131112003803')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131113193516')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131113225811')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131113225903')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131115210107')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131116062551')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131116062601')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "lichens"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-17 12:59:18', '2014-03-17 12:59:18', 980190962)[0m
+SQLite3::SQLException: table lichens has no column named soredia: INSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-17 12:59:18', '2014-03-17 12:59:18', 980190962)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "lichens"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-17 12:59:18', '2014-03-17 12:59:18', 980190962)[0m
+SQLite3::SQLException: table lichens has no column named soredia: INSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-17 12:59:18', '2014-03-17 12:59:18', 980190962)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "lichens"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-17 12:59:18', '2014-03-17 12:59:18', 980190962)[0m
+SQLite3::SQLException: table lichens has no column named soredia: INSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-17 12:59:18', '2014-03-17 12:59:18', 980190962)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "lichens"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-17 12:59:18', '2014-03-17 12:59:18', 980190962)[0m
+SQLite3::SQLException: table lichens has no column named soredia: INSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-17 12:59:18', '2014-03-17 12:59:18', 980190962)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "lichens"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-17 12:59:18', '2014-03-17 12:59:18', 980190962)[0m
+SQLite3::SQLException: table lichens has no column named soredia: INSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-17 12:59:18', '2014-03-17 12:59:18', 980190962)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "lichens"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-17 12:59:18', '2014-03-17 12:59:18', 980190962)[0m
+SQLite3::SQLException: table lichens has no column named soredia: INSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-17 12:59:18', '2014-03-17 12:59:18', 980190962)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "lichens"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-17 12:59:18', '2014-03-17 12:59:18', 980190962)[0m
+SQLite3::SQLException: table lichens has no column named soredia: INSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-17 12:59:18', '2014-03-17 12:59:18', 980190962)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "lichens"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-17 12:59:18', '2014-03-17 12:59:18', 980190962)[0m
+SQLite3::SQLException: table lichens has no column named soredia: INSERT INTO "lichens" ("species", "ascomata", "soredia", "isida", "cyano", "created_at", "updated_at", "id") VALUES ('MyString', 'f', 'f', 'f', 'f', '2014-03-17 12:59:18', '2014-03-17 12:59:18', 980190962)
+  [1m[35m (0.4ms)[0m  rollback transaction

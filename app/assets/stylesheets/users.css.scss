@@ -1,0 +1,83 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.smallBox
+{
+	width:50%;
+	position:absolute;
+	top:20%;
+	left:25%;
+	border: 1px solid black;
+	padding: 10px;
+	padding-bottom:50px !important;
+}
+.smallBox h2
+{
+	font-size:30px !important;
+	font-weight:800;
+	text-transform:uppercase;
+	margin-bottom: 20px !important;
+}
+.smallBox input[type="email"], .smallBox input[type="password"], .smallBox input[type="text"]
+{
+	width:70%;
+	-webkit-box-sizing:border-box;
+	outline:none;
+	background:white;
+	color:black;
+	border: 1px solid black;
+	padding:10px;
+	font-size:13px;
+	margin-left:0 !important;
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+.smallBox input[type="submit"]
+{
+	-webkit-box-shadow:none;
+	background:white;
+}
+.smallBox input[type="checkbox"]
+{
+	margin-left:10px;
+	margin-top:15px !important;
+}
+
+.smallBox label
+{
+	color:white;
+	background:black;
+	padding:10px;
+	font-size:13px;
+	border:1px solid black;
+	text-transform:uppercase;
+	width:20%;
+	-webkit-box-sizing:border-box;
+}
+.smallBox input
+{
+	margin-top:0px !important;
+	outline:none;
+}
+.smallBox .center
+{
+	position:absolute;
+	left:50%;
+	bottom:10px;
+	margin-left:-75px;
+}
+.otherbut a
+{
+	position:relative;
+	top:75px;
+	color:black;
+	text-decoration:none;
+}
+.smallBox .right
+{
+	float:right;
+}
+.smallBox .left
+{
+	float:left;
+}

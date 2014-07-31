@@ -1,0 +1,31 @@
+<div class='lichens'>	
+	<p href='.' class='remove_link'>&#8854;</p>
+
+	<div class='formgrid'>
+	    <%= f.label :species, "Species"%>
+	        <%= f.text_field :species, :class => "species-field"%>
+	</div>
+	<div class='formgrid'>
+		<div class='ltype'>
+			<%= f.label :ascomata, "ascomata"%>
+		    <%= f.select(:ascomata, [['--', ''], ['Yes', 'yes'], ['No', 'no'], ['Maybe', 'maybe']]) %>
+		</div>
+		<div class='ltype'>	 
+			<%= f.label :issored, "isida/soredia"%>
+		 	<%= f.select(:issored, [['--', ''], ['Yes', 'yes'], ['No', 'no'], ['Maybe', 'maybe']]) %>
+		</div>
+		<div class='ltype'>
+			<%= f.label :cyano, "cyanolichen"%>
+			<%= f.select(:cyano, [['--', ''], ['Yes', 'yes'], ['No', 'no'], ['Maybe', 'maybe']]) %>
+		</div>
+	</div>
+	<div class='formgrid'>
+	     <%= f.label :pcover, "percent cover"%>
+	        <%= f.select(:pcover, [['--', ''], ['< 5%', '5'], ['6-25%', '25'], ['26-50%', '50'], ['51-75%', '75'], ['76-95%', '95'], ['> 95%', '100']]) %>
+	</div>
+	<div class='formgrid'>
+	     <%= f.label :growth, "growth form"%>
+	    <%= f.select(:growth, [['--', ''], ['Crustose', 'crustose'], ['Foliose', 'foliose'], ['Fruiticose', 'fruiticose']]) %>
+	</div>
+<div style='clear:both;'></div>  
+</div>

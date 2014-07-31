@@ -1,0 +1,452 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/*html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}*/
+/* HTML5 display-role reset for older browsers */
+/*article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*/
+/*-----------------Main Style----------------*/
+/*body
+{
+    background:#f5f5f5;
+}
+#map-canvas 
+{ 
+	height: 600px;
+	width:111%;
+	position:relative;
+	left:-5.5%;
+}
+/*---Header---*/
+/*header
+{
+    background:white;
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:5;
+}
+header nav
+{
+    width:90%;
+    position:relative;
+    background:white;
+    left:5%;
+    height:100%;
+}
+header nav ul
+{
+    background:red;
+}
+header nav li
+{
+    line-height:100px;
+    float:left;
+    color:#777;
+    padding:0 20px 0 20px;
+    margin-bottom:-4px;
+}
+header nav li a
+{
+    font-family: quicksand;
+    font-size:16px;
+    color:#777;
+    text-decoration:none;
+    -webkit-transition:all .3s;
+}
+header nav li:hover a
+{
+    color:#95EDC3;
+}
+.logo a
+{
+    font-size:24px;
+    text-transform:uppercase;
+}
+.logo span
+{
+    font-size:12px;
+    position:relative;
+    bottom:8px;
+    right:3px;
+}
+header nav li.right
+{
+    float:right;
+}
+#accBut:hover ~ .accBox
+{
+    top:100%;
+}
+.accBox:hover
+{
+    top:100%;
+}
+.accBox
+{
+    position:absolute;
+    right:0;
+    top:0%;
+    z-index:-1;
+    -webkit-transition:all .3s;
+}
+.accBox a
+{
+    display:block;
+    padding:10px;
+    width:150px;
+    color:#fff;
+    font-family: quicksand;
+    text-decoration:none;
+    overflow:hidden;
+    -webkit-box-sizing:border-box;
+    -webkit-transition:all .3s;
+}
+.accBox #green
+{
+    float:left;
+}
+#green
+{
+	background:#29CC51;
+	color:white;
+}
+#green:hover
+{
+    background:#2EE05A;
+}
+.accBox #blue
+{
+    float:right;
+}
+#blue
+{
+    background:#95EDC3;
+	color:white;	
+}
+#blue:hover
+{
+    background:#A0FFD2;
+}
+.accBox #red
+{
+    float:right;
+}
+#red
+{
+    background:#FF591A;
+	color:white;
+}
+#red:hover
+{
+    background:#FF6D1A;
+}
+#shadow
+{
+    width:100%;
+    background:#444;
+    opacity:.3;
+    color:#444;
+    height:3px;
+    overflow:hidden;
+    position:absolute;
+    z-index:-1;
+}
+/*---Main Area---*/
+/*main
+{
+    position:relative;
+    top:120px;
+    width:90%;
+	left:5%;
+    color:#777;
+    font-family: quicksand;
+	padding-bottom:100px;
+}
+h2
+{
+	font-size:26px;
+	text-transform:uppercase;
+	margin-bottom:10px;
+}
+h3
+{
+	text-transform:uppercase;
+	font-size:24px;
+	clear:both;
+	margin: 10px 0 10px 0;
+	padding: 10px 0 0 0;
+}
+h4
+{
+	font-size:22px;
+	margin-bottom:20px;
+}
+.dark
+{
+	color:#444;
+}
+/*---Form Styling---*/
+/*.formgrid
+{
+	width:50%;
+	float:left;
+	margin:10px 0 10px 0;
+}
+label
+{
+	font-size:15px;
+	clear:both;
+	display:block;
+	margin: 0 0 5px 0;
+	text-transform:lowercase;
+}
+input, textarea
+{
+	width:98%;
+	height:30px;
+	padding:5px;
+	-webkit-box-sizing:border-box;
+	background:#ededed;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+	border-style:none none solid none;
+	border-color:#fff;
+	border-width:1px;
+	outline:none;
+	color:#777;
+	font-family: quicksand;
+}
+select
+{
+	width:98%;
+	padding:5px;
+	color:#777;
+	height:30px;
+	font-family: quicksand;
+	border-style:solid none none none;
+	border-color:white;
+	border-width:1px;
+	background:#ededed;
+	border-radius:0;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	-webkit-appearance:none;
+	outline:none;
+}
+input[type='submit'], .otherbut a
+{
+	color:white;
+	border-style: none none solid none;
+	border-width: 3px;
+	text-transform:uppercase;
+	width:200px;
+	margin: 20px 0 0 0;
+	font-size:12px;
+	border-radius:5px;
+	padding:10px;
+	height:auto;
+	text-decoration:none;
+	text-align:center;
+	-webkit-transition:all .3s;
+}
+input[type='submit']
+{
+	float:right;
+	background:#29CC51;
+	border-color:#1F993D;
+}
+input[type='submit']:hover
+{
+	background:#2EE05A;
+}
+input[type='submit']:active, .otherbut a:active
+{
+	border-width:0px;
+	margin-top:23px;
+}
+
+input[type='checkbox']
+{
+	background:none;
+	box-shadow:none;
+}
+.otherbut a
+{
+	float:left;
+	background:#FF591A;
+	border-color:#CF4815;
+}
+.otherbut a:hover
+{
+	background:#FF6D1A;
+}
+
+
+
+
+#date select, .ltype
+{
+	width:32%;
+	-webkit-box-sizing:border-box;
+}
+.ltype
+{
+	float:left;
+	margin-right:5px;
+}
+.ltype select
+{
+	width:100%;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.lichens
+{
+	width:100%;
+	-webkit-perspective:1000px;
+}
+.smallBox
+{
+	width:95%;
+	float:right;
+}
+.remove_link, .smbut a
+{
+	color:white;
+	text-decoration:none;
+	height:40px;
+	width:40px;
+	display:block;
+	text-align:center;
+	line-height:40px;
+	border-radius:20px;
+	text-size:40px;
+	position:absolute;
+	clear:both;
+}
+.remove_link
+{
+	background:#FF591A;
+}
+.smbut a
+{
+	background:#29CC51;
+}
+.smbut:hover
+{
+
+}
+#lBox
+{
+	margin-bottom:80px;
+}
+
+/*----Data CSS---*/
+/*.data
+{
+	text-align:left;
+}
+.data td
+{
+	width:10%;
+}
+.data a
+{
+	text-decoration:none;
+	color:#666;
+}
+
+/*---Map---*/
+/*.map
+{
+	width:300px;
+	height:400px;
+}
+.map table
+{
+	float:left;
+}
+.map table td
+{
+	width:50%;
+	padding:5px;
+}
+.map table, .map table tr
+{
+	width:100%;	
+}
+.head
+{
+	float:left;
+	width:70px;
+	padding:5px;
+}
+.link a
+{
+	float:left;
+	color:#444;
+	text-decoration:none;
+}
+.map img
+{
+	width:300px;
+}*/

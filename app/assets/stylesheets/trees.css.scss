@@ -1,0 +1,137 @@
+// Place all the styles related to the trees controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.formgrid
+{
+	width:50%;
+	float:left;
+	margin:10px 0 10px 0;
+}
+.formWrap
+{
+	width:90%;
+	position:relative;
+	left:5%;
+}
+.formgrid input[type="text"], .formgrid input[type="number"], .formgrid textarea, .formgrid select
+{
+	width:80%;
+	height:50px;
+	-webkit-box-sizing:border-box;
+	outline:none;
+	background:white;
+	color:black;
+	border: 1px solid black;
+	padding:10px;
+	font-size:13px;
+	margin-left:0 !important;
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+	float:right;
+}
+.formgrid select
+{
+	-webkit-appearance: none;
+	border-radius:0 !important;
+}
+#date select
+{
+	width:26.66%;
+	border-left-style:none;
+}
+.formgrid label, strong
+{
+	height:50px;
+	color:white;
+	background:black;
+	padding:10px;
+	font-size:13px;
+	border:1px solid black;
+	text-transform:uppercase;
+	width:20%;
+	-webkit-box-sizing:border-box;
+	float:left;
+}
+.formgrid input
+{
+	margin-top:0px !important;
+	outline:none;
+}
+.sectionwrap
+{
+	width:90%;
+	position:relative;
+	left:-5%;
+	float:right;
+	min-height:100px;
+}
+.smbut, .remove_link
+{
+	position:absolute;
+	left:-60px;
+	font-size:60px;
+	font-family:entypo;
+}
+.smbut
+{
+	top:-20px;
+}
+.remove_link
+{
+	top:50px;
+	cursor:pointer;
+}
+.smbut a, .remove_link
+{
+	color:black;
+	text-decoration:none;
+}
+.ltype
+{
+	width:33.33%;
+	float:left;
+}
+.ltype label
+{
+	width:70%;
+	-webkit-box-sizing:border-box;
+}
+.ltype select
+{
+	width:30%;
+	-webkit-box-sizing:border-box;
+}
+#treesubmit
+{
+	float:right;
+	position:relative;
+	bottom:50px;
+	right:30px;
+	text-transform:uppercase;
+	font-family:entypo;
+}
+strong
+{
+	height:auto;
+	display:block;
+	color:black;
+	background:white;
+}
+
+.tree h2
+{
+	font-size:20px !important;
+	margin:20px 0 20px 0;
+}
+.quadBox
+{
+	position:relative;
+	top:50px;
+	clear:both;
+	border:1px solid black;
+	padding-bottom: 50px;
+}
+.tree .sectionwrap
+{
+	margin:20px 0 20px 0;
+}

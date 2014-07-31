@@ -1,0 +1,112 @@
+<section class="pageOverflow">
+<p class="right top fixed menu dark" data-page="1">&#9776;</p>
+<p id="notice"><%= notice %></p>
+<h1>Record #<%= @tree.id %></h1>
+<div class="tree">
+<p>
+  <strong>Date:</strong><%= @tree.date %>
+</p><br>
+
+<p>
+  <strong>Species:</strong><%= @tree.species %>
+</p><br>
+
+<p>
+  <strong>Circumference:</strong><%= @tree.circum %>
+</p><br>
+
+<p>
+  <strong>Light:</strong><%= @tree.light %>
+</p><br>
+
+<p>
+  <strong>Latitude:</strong><%= @tree.lat %>
+</p><br>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @tree.long %>
+</p><br>
+
+<p>
+  <strong>Distance to Road:</strong>
+  <%= @tree.droad %>
+</p><br>
+
+<p>
+  <strong>Distance to Water:</strong>
+  <%= @tree.dwater %>
+</p><br>
+
+<p>
+  <strong>Direction:</strong>
+  <%= @tree.direction %>
+</p><br>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @tree.notes %>
+</p><br>
+
+<p>
+  <strong>Picture of Area:</strong>
+  <img class='dataimg' src='<%= @tree.parea %>'/>
+</p><br>
+
+<p>
+  <strong>Picture of Tree:</strong>
+  <img class='dataimg' src='<%= @tree.ptree %>'/>
+</p><br>
+
+<p>
+  <strong>Picture of Leaf:</strong>
+  <img class='dataimg' src='<%= @tree.pleaf %>'/>
+</p><br>
+<% count = 0%>
+<% for h in @tree.quadrants %>
+<% count +=1 %>
+<div class="quadBox">
+<h2>Quadrant <%= count %></h2>
+<p>
+  <strong>Image</strong>
+  <img class='dataimg' src='<%= h.image%>'/>
+</p>
+<p>
+  <strong>Notes</strong>
+  <%= h.notes%></p>
+</p>
+
+<div class="sectionwrap">
+<h2>Lichens for Quadrant <%= count %></h2>
+<% for l in h.lichens %>
+<div class="sectionwrap">
+<h2>Lichen</h2>
+<p>
+  <strong>Species</strong>
+  <%= l.species%>
+</p>
+<p>
+  <strong>Percent Cover</strong>
+  <%=l.pcover%>
+</p>
+<p>
+  <strong>Ascomata</strong>
+  <%= l.ascomata%>
+</p>
+<p>
+  <strong>Isida/Soredia</strong>
+  <%= l.issored %>
+</p>
+<p>
+  <strong>Cyanolichen</strong>
+  <%= l.cyano %>
+</p>
+</div>
+<%end%>
+</div>
+<div style="clear:both;"></div>
+</div>
+<%end%>
+</div>
+</section>
+

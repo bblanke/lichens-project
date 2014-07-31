@@ -1,0 +1,19 @@
+<h3 class='quadhead'>Quadrat <%= count %></h3>
+
+<div class='formgrid'>
+    <%= f.label :image, "Image"%>
+        <%= f.file_field :image %>
+</div>
+<div class='formgrid'>
+    <%= f.label :notes, "Notes"%>
+        <%= f.text_area :notes%>
+</div>
+
+<div class="sectionwrap">
+<h4>Lichens</h4>
+	<%= f.fields_for :lichens do |builder| %>
+	  <%= render 'lichen_fields', :f => builder %>
+	<% end %>
+	<p class='smbut'><%= link_to_add_fields "&oplus;".html_safe, f, :lichens %></p>
+	<div style='clear:both'></div>
+</div>

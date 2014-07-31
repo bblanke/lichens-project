@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LichensProject</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  
+  <!--Fonts-->
+  <!--<script>var __adobewebfontsappname__ = "code"</script>
+  <script src="http://use.edgefonts.net/quicksand:i4,n3,i7,n7,n4,i3:all.js"></script>-->
+  <script src="http://use.edgefonts.net/lobster-two:n7,i4,i7,n4:all.js"></script>
+  <script src="//use.edgefonts.net/lato:n3,i3,n7.js"></script>
+  
+  <%= yield :head %>
+</head>
+<body>
+	<main role='main'> 
+    <nav>
+        <ul>
+			<li><%=link_to "About", root_path(anchor: "page2"), class:"smoothScroll"%></li>
+            <li><%=link_to "Map", root_path(anchor: "page3"), class:"smoothScroll"%></li>
+            <li><%=link_to "Data", root_path(anchor: "page4"), class:"smoothScroll"%></li>
+			<% if user_signed_in?%>
+			<li><a href="trees/new">Submit</a></li>
+			<li><%= link_to(current_user.name, edit_user_registration_path) %></a></li>
+			<li><%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %>
+				<%else%>
+				<%= link_to('Sign In', new_user_session_path)  %>
+				<%end%>
+				
+        </ul>
+    </nav>
+		
+		<%= yield %>
+    
+	</main>
+	
+</body>
+</html>

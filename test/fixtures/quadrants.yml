@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tree_id: 1
+  qnum: 1
+  pcover: 1
+  image: MyString
+  notes: MyText
+
+two:
+  tree_id: 1
+  qnum: 1
+  pcover: 1
+  image: MyString
+  notes: MyText

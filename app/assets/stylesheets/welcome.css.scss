@@ -1,0 +1,364 @@
+@import "bootstrap";
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*Begin Style*/
+
+/*Basics*/
+
+html, main, body
+{
+    height:100%;
+    font-family: lato, sans-serif;
+}
+body
+{
+    /*width:80% !important;*/
+}
+.page
+{
+    height:100%;
+    overflow:hidden;
+    position:relative;
+}
+.pageOverflow
+{
+    min-height:100%;
+	position:relative;
+	overflow:hidden;
+}
+.p1
+{
+    background:url(image_path('trees_fall.png'));
+    background-size:cover;
+}
+.overlay
+{
+    height:100%;
+}
+.vignette
+{
+    background: rgba(248,80,50,0);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(248,80,50,0) 0%, rgba(34,34,34,0.35) 100%);
+   /* background: -webkit-gradient(radial, center center, 0px, center center, 100%, , color-stop(0%, rgba(248,80,50,0)), color-stop(100%, rgba(34,34,34,0.35)));*/
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(248,80,50,0) 0%, rgba(34,34,34,0.35) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(248,80,50,0) 0%, rgba(34,34,34,0.35) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(248,80,50,0) 0%, rgba(34,34,34,0.35) 100%);
+    background: radial-gradient(ellipse at center, rgba(248,80,50,0) 0%, rgba(34,34,34,0.35) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#222222', GradientType=1 );
+}
+
+#bigTitle
+{
+    position:absolute;
+    color:white;
+    font-family: lobster-two;
+    text-align:center;
+    width:100%;
+    top:30%;
+}
+
+.center
+{
+    margin: 0 auto;
+}
+.middle
+{
+    position:absolute;
+    left:50%;
+    margin-left:-85px;
+}
+.top
+{
+    position:absolute;
+}
+.right
+{
+    right:0px;
+}
+.menu
+{
+    padding:30px;
+    font-size:30px;
+    cursor:pointer;
+    text-decoration:none;
+    z-index:20;
+}
+.light.menu
+{
+    color:white;
+    -webkit-transition:text-shadow .3s;
+}
+.light.menu:hover
+{
+    text-shadow: 0 0 2px #fff;
+}
+.dark.menu
+{
+    color:black;
+    -webkit-transition:color .3s;
+}
+.dark.menu:hover
+{
+    color:#41a2bd;
+}
+
+
+.bottom
+{
+    position:absolute;
+    bottom:20px;
+}
+.button
+{
+    color:black !important;
+	border: 1px solid black;
+    width:150px !important;
+	background:white;
+    padding:10px;
+    text-align:center;
+    -webkit-transition:all.3s;
+}
+.button:hover
+{
+    background:black !important;
+	color:white !important;
+}
+#bigTitle h1
+{
+    font-size: 140px;
+    padding:0px;
+    color:white;
+}
+#bigTitle h2
+{
+    font-size: 25px;
+}
+#bigTitle span
+{
+    position:relative;
+}
+#bottomLeft
+{
+    right:13px;
+}
+#bottomRight
+{
+    left:50px;
+}
+#bigTitle .little
+{
+    font-size:20%;
+    position:absolute;
+    margin-left: -30px;
+}
+nav
+{
+    position:fixed;
+    width:0%;
+    right:0;
+}
+nav a
+{
+    text-decoration:none;
+    font-family: lato, sans-serif;
+    font-size:20px;
+    padding:20px;
+    display:block;
+    width:100%;
+    -webkit-transition:all .3s;
+    text-shadow: 0 0 0 #fff;
+    color:black;
+    -webkit-transition:background .3s, color .3s;
+}
+nav a:hover
+{
+    background:black;
+    color:white;
+}
+nav li
+{
+    font-size:15px;
+}
+.dArrow
+{
+    display:block;
+    height:60px;
+    width:60px;
+    margin: 0 auto;
+    text-align:center;
+    line-height:60px;
+    border-radius:30px;
+    border: 2px #fff solid;
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+    position:absolute;
+    bottom:5%;
+    left:50%;
+    margin-left:-27px;
+    animation:bounce 1s;
+    -webkit-animation:bounce 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function:linear;
+    -webkit-transition: all .3s;
+    text-shadow: 0 0 0 #fff;
+}
+.dArrow:hover
+{
+    text-shadow: 0 0 2px #fff;
+}
+@keyframes bounce
+{
+0%   {line-height:60px;}
+25%  {line-height:57px;}
+50%  {line-height:60px;}
+75%  {line-height:63px;}
+100% {line-height:60px;}
+}
+
+@-webkit-keyframes bounce /* Safari and Chrome */
+{
+0%   {line-height:60px;}
+25%  {line-height:50px;}
+50%  {line-height:60px;}
+75%  {line-height:70px;}
+100% {line-height:60px;}
+}
+h1
+{
+    margin:0 auto;
+    font-size:40px;
+    text-align:center;
+    padding: 20px;
+    color:black;
+}
+.p2Text
+{
+    position:relative;
+    width:80%;
+    left:10%;
+    line-height:150%;
+}
+#map-canvas
+{
+    height:100%;
+}
+.navBut
+{
+    position:absolute;
+    z-index:10;
+    right:10px;
+    margin-top:10px;
+    color:white;
+}
+.p2 a
+{
+    color: #41a4bd;
+    text-decoration:none;
+}
+
+/*Page 4 Styling*/
+
+.p4 table
+{
+    width:100%;
+    position:relative;
+    top:0;
+    left:0;
+}
+.p4 th
+{
+    background:black;
+    color:white;
+    text-align:left;
+    -webkit-box-sizing:border-box;
+    padding:20px;
+    border: 1px solid black;
+	height:90px;
+	vertical-align:middle;
+}
+.p4 thead
+{
+	overflow:hidden;
+}
+.p4 tbody
+{
+
+}
+.p4 td
+{
+    border: 1px solid black;
+    padding:10px;
+    -webkit-box-sizing:border-box;
+}
+.p4 table a
+{
+    color:black;
+    text-decoration:none;
+}
+.arrowBox
+{
+    text-align:center;
+	font-family:entypo;
+	vertical-align:middle;
+	font-size:1.5em;
+	position:relative;
+	left:0;
+	-webkit-transition:left .3s;
+}
+.arrowBox:hover
+{
+	left:5px;
+}
+.wideCell
+{
+	width:100px;
+}
